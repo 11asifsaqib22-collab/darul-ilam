@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدرسہ دارالاسلام پشاور</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap');
+
+:root {
+  --green: #07552f;
+  --deep: #033b22;
+  --gold: #e6c56a;
+  --cream: #fffdf3;
+  --light: #eff8ef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  background: var(--cream);
+  color: #173e29;
+  line-height: 2.2;
+}
+
+a { text-decoration: none; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* Intro */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 36%,
+    #fff9ce 0%, #d9efb9 24%,
+    #5da96d 65%, #033b22 100%);
+  animation: introOut 1s ease 6s forwards;
+}
+
+.sun {
+  position: absolute;
+  top: 13%;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #ffe89a;
+  box-shadow: 0 0 35px 20px #fff1a7,
+              0 0 90px 45px #ffeb9b;
+  animation: sunRise 2.5s ease-out both;
+}
+
+.intro-logo {
+  position: relative;
+  width: min(310px, 84vw);
+  padding: 22px 15px;
+  text-align: center;
+  color: white;
+  border: 4px double var(--gold);
+  outline: 1px solid rgba(255,255,255,.5);
+  outline-offset: 6px;
+  border-radius: 48% 48% 20px 20px;
+  background: linear-gradient(145deg, #087544, #033c22);
+  box-shadow: 0 0 35px rgba(255,224,123,.7);
+  animation: logoAppear 1.6s ease-out both;
+}
+
+.crescent {
+  font-family: Arial, sans-serif;
+  color: var(--gold);
+  font-size: 38px;
+  line-height: 1.5;
+}
+
+.book {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 70px;
+  line-height: 1.5;
+  transform-origin: center;
+  animation: bookOpen 2s ease-in-out .5s both;
+}
+
+.intro-logo h1 {
+  font-size: clamp(20px, 6vw, 27px);
+  line-height: 2;
+  color: white;
+}
+
+.intro-logo .city {
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.intro-logo .motto {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #fff4c5;
+}
+
+.bismillah {
+  position: relative;
+  margin-top: 24px;
+  color: #fffbe7;
+  font-size: 17px;
+  animation: logoAppear 2s ease-out both;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 12px 5%;
+  background: var(--deep);
+  color: white;
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 4px 18px #00000018;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.brand h2 {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.brand small {
+  display: block;
+  color: #f5df9c;
+  font-size: 12px;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  font-size: 13px;
+  transition: color .2s;
+}
+
+nav a:hover { color: var(--gold); }
+
+/* Hero */
+.hero {
+  min-height: 490px;
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(#f4fff0e8, #e3f3e1ed),
+    radial-gradient(circle at top, #fff0a8, #d8efd4);
+}
+
+.hero-content { max-width: 760px; }
+
+.eyebrow {
+  display: inline-block;
+  padding: 4px 18px;
+  border: 1px solid #d5b65b;
+  border-radius: 30px;
+  color: var(--green);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  color: var(--deep);
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 2;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 24px;
+  font-size: 16px;
+  color: #405a47;
+}
+
+.btn {
+  display: inline-block;
+  padding: 9px 23px;
+  margin: 5px;
+  border: 1px solid var(--green);
+  border-radius: 7px;
+  background: var(--green);
+  color: white;
+  font-size: 14px;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: var(--deep);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+}
+
+/* Sections */
+section {
+  padding: 55px 20px;
+  scroll-margin-top: 90px;
+}
+
+.section-inner {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--deep);
+  font-size: 27px;
+  line-height: 2;
+  margin-bottom: 8px;
+}
+
+.section-line {
+  width: 75px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0 auto 28px;
+}
+
+.about-text {
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  color: #4b6251;
+  font-size: 16px;
+}
+
+.programs { background: var(--light); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #dce9db;
+  border-radius: 14px;
+  padding: 24px 17px;
+  text-align: center;
+  box-shadow: 0 6px 22px #123b1710;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px #123b171c;
+}
+
+.card-icon {
+  font-family: Arial, sans-serif;
+  font-size: 38px;
+  line-height: 1.7;
+}
+
+.card h3 {
+  font-size: 19px;
+  color: var(--green);
+  margin: 5px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #647267;
+  line-height: 2.2;
+}
+
+.admission {
+  text-align: center;
+  background: var(--deep);
+  color: white;
+}
+
+.admission h2 { color: white; }
+
+.admission p {
+  margin: 8px auto 18px;
+  max-width: 700px;
+  color: #e0eadf;
+}
+
+.admission .btn {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--deep);
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.contact-box {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e0e9dc;
+  border-radius: 12px;
+}
+
+.contact-box h3 {
+  color: var(--green);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.contact-box p { font-size: 15px; }
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  background: #022c19;
+  color: #f8f4df;
+  border-top: 3px solid var(--gold);
+}
+
+footer p { font-size: 13px; }
+
+@keyframes sunRise {
+  from { transform: translateY(70px) scale(.5); opacity: .2; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes bookOpen {
+  0% { transform: perspective(400px) rotateY(75deg) scaleX(.25); opacity: 0; }
+  55% { transform: perspective(400px) rotateY(-12deg) scaleX(1.05); opacity: 1; }
+  100% { transform: perspective(400px) rotateY(0) scaleX(1); opacity: 1; }
+}
+
+@keyframes logoAppear {
+  from { opacity: 0; transform: translateY(25px) scale(.85); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes introOut {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@media (max-width: 760px) {
+  header { position: relative; }
+  .nav { flex-direction: column; }
+  nav { flex-wrap: wrap; justify-content: center; gap: 8px 16px; }
+  nav a { font-size: 12px; }
+  .hero { min-height: 430px; padding: 50px 18px; }
+  .cards { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  section { padding: 42px 17px; }
+  .section-title { font-size: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Animated intro -->
+<div class="intro">
+  <div class="sun"></div>
+
+  <div class="intro-logo">
+    <div class="crescent">☪</div>
+    <div class="book" aria-label="کھلی کتاب">📖</div>
+    <h1>مدرسہ دارالاسلام</h1>
+    <div class="city">پشاور</div>
+    <div class="motto">علم • تربیت • کردار سازی</div>
+  </div>
+
+  <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-icon">☪</div>
+      <div>
+        <h2>مدرسہ دارالاسلام</h2>
+        <small>پشاور</small>
+      </div>
+    </div>
+
+    <nav aria-label="مرکزی مینیو">
+      <a href="#home">ہوم</a>
+      <a href="#about">تعارف</a>
+      <a href="#programs">تعلیم</a>
+      <a href="#admission">داخلہ</a>
+      <a href="#contact">رابطہ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Home -->
+<main>
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow">قرآن و سنت کی روشنی</span>
+      <h1>مدرسہ دارالاسلام پشاور</h1>
+      <p>
+        دینی تعلیم، اخلاقی تربیت اور علم کی روشنی کے سفر میں
+        آپ کو خوش آمدید۔
+      </p>
+      <a class="btn" href="#about">مدرسے کا تعارف</a>
+      <a class="btn btn-outline" href="#contact">رابطہ کریں</a>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <h2 class="section-title">ہمارے مدرسے کے بارے میں</h2>
+      <div class="section-line"></div>
+      <p class="about-text">
+        مدرسہ دارالاسلام پشاور کی ویب سائٹ میں خوش آمدید۔
+        یہاں مدرسے کی تاریخ، اساتذہ، تعلیمی نظام اور دیگر
+        معلومات شامل کی جا سکتی ہیں۔ اس حصے میں مدرسے کی
+        انتظامیہ سے تصدیق شدہ تعارف درج کریں۔
+      </p>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="programs" id="programs">
+    <div class="section-inner">
+      <h2 class="section-title">تعلیمی شعبے</h2>
+      <div class="section-line"></div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">📖</div>
+          <h3>ناظرہ قرآن</h3>
+          <p>قرآنِ پاک کی درست قرأت اور تلفظ کی تعلیم۔</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌙</div>
+          <h3>حفظ القرآن</h3>
+          <p>قرآنِ پاک یاد کرنے اور دہرائی کا تعلیمی شعبہ۔</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">✦</div>
+          <h3>تجوید القرآن</h3>
+          <p>تجوید کے اصولوں کے مطابق قرأت سیکھنے کی تعلیم۔</p>
+        </article>
+      </div>
+
+      <p style="text-align:center;margin-top:20px;font-size:12px;color:#6b776d">
+        نوٹ: ویب سائٹ شائع کرنے سے پہلے تصدیق کریں کہ یہ شعبے مدرسے میں موجود ہیں۔
+      </p>
+    </div>
+  </section>
+
+  <!-- Admission -->
+  <section class="admission" id="admission">
+    <div class="section-inner">
+      <h2 class="section-title">داخلے کی معلومات</h2>
+      <div class="section-line"></div>
+      <p>
+        داخلے، مطلوبہ دستاویزات اور تعلیمی اوقات کی درست معلومات
+        مدرسے کی انتظامیہ سے حاصل کرکے یہاں شامل کریں۔
+      </p>
+      <a class="btn" href="#contact">مزید معلومات کے لیے رابطہ</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">رابطہ کریں</h2>
+      <div class="section-line"></div>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>📍 مدرسے کا پتہ</h3>
+          <p>پشاور، خیبر پختونخوا</p>
+          <p>مکمل پتہ انتظامیہ سے تصدیق کے بعد شامل کریں۔</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>☎ رابطے کی معلومات</h3>
+          <p>مدرسے کا تصدیق شدہ فون نمبر یہاں شامل کریں۔</p>
+          <p>ای میل یا اوقاتِ رابطہ بھی درج کیے جا سکتے ہیں۔</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>مدرسہ دارالاسلام پشاور</p>
+  <p>علم • تربیت • کردار سازی</p>
+  <p>© <span id="year">2026</span> تمام حقوق محفوظ ہیں</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
+<!-- Admission Form -->
+<section id="admission" class="admission-form-section">
+  <div class="section-inner">
+
+    <span class="form-badge">داخلہ برائے طلبہ</span>
+    <h2 class="section-title">داخلہ درخواست فارم</h2>
+    <div class="section-line"></div>
+
+    <p class="form-intro">
+      مدرسہ دارالاسلام پشاور میں داخلے کے لیے
+      براہِ کرم تمام ضروری معلومات درست درج کریں۔
+    </p>
+
+    <form id="admissionForm" class="admission-form">
+
+      <h3 class="form-heading">۱۔ طالب علم کی معلومات</h3>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="studentName">طالب علم کا مکمل نام *</label>
+          <input id="studentName" name="studentName"
+                 type="text" required
+                 placeholder="طالب علم کا نام">
+        </div>
+
+        <div class="field">
+          <label for="fatherName">والد کا مکمل نام *</label>
+          <input id="fatherName" name="fatherName"
+                 type="text" required
+                 placeholder="والد کا نام">
+        </div>
+
+        <div class="field">
+          <label for="dob">تاریخِ پیدائش *</label>
+          <input id="dob" name="dob" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="bForm">ب فارم نمبر (اگر دستیاب ہو)</label>
+          <input id="bForm" name="bForm" type="text"
+                 placeholder="اختیاری">
+        </div>
+
+        <div class="field">
+          <label for="phone">سرپرست کا فون نمبر *</label>
+          <input id="phone" name="phone" type="tel"
+                 required placeholder="03XXXXXXXXX">
+        </div>
+
+        <div class="field">
+          <label for="guardian">سرپرست سے رشتہ *</label>
+          <select id="guardian" name="guardian" required>
+            <option value="">منتخب کریں</option>
+            <option>والد</option>
+            <option>والدہ</option>
+            <option>بھائی</option>
+            <option>دیگر سرپرست</option>
+          </select>
+        </div>
+
+        <div class="field full-width">
+          <label for="address">مکمل رہائشی پتہ *</label>
+          <textarea id="address" name="address" rows="3"
+                    required placeholder="گھر، محلہ اور شہر"></textarea>
+        </div>
+      </div>
+
+      <h3 class="form-heading">۲۔ تعلیمی معلومات</h3>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="program">مطلوبہ شعبہ *</label>
+          <select id="program" name="program" required>
+            <option value="">شعبہ منتخب کریں</option>
+            <option>ناظرہ قرآن</option>
+            <option>حفظ القرآن</option>
+            <option>تجوید القرآن</option>
+            <option>دیگر</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="education">سابقہ تعلیم *</label>
+          <select id="education" name="education" required>
+            <option value="">تعلیم منتخب کریں</option>
+            <option>ابتدائی تعلیم</option>
+            <option>پرائمری</option>
+            <option>مڈل</option>
+            <option>دینی تعلیم</option>
+            <option>کوئی سابقہ تعلیم نہیں</option>
+            <option>دیگر</option>
+          </select>
+        </div>
+
+        <div class="field full-width">
+          <label for="notes">اضافی معلومات (اختیاری)</label>
+          <textarea id="notes" name="notes" rows="3"
+                    placeholder="کوئی ضروری تعلیمی معلومات"></textarea>
+        </div>
+      </div>
+
+      <div class="form-consent">
+        <input id="confirm" type="checkbox" required>
+        <label for="confirm">
+          میں تصدیق کرتا/کرتی ہوں کہ درج کردہ معلومات میری
+          بہترین معلومات کے مطابق درست ہیں۔
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        درخواست جمع کرنے کی کوشش کریں
+      </button>
+
+      <p class="form-note">
+        اہم: یہ ابھی ڈیمو فارم ہے۔ درخواست مدرسے کو نہیں بھیجی جائے گی۔
+        آن لائن درخواستیں وصول کرنے کے لیے فارم کو محفوظ طریقے سے
+        ڈیٹابیس یا کسی فارم سروس سے جوڑنا ضروری ہے۔
+      </p>
+
+      <p id="formMessage" class="form-message" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<style>
+.admission-form-section {
+  background: #eff8ef;
+  padding: 55px 18px;
+}
+
+.form-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 10px;
+  padding: 4px 18px;
+  color: #07552f;
+  border: 1px solid #d7ba60;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+.form-intro {
+  text-align: center;
+  color: #56685a;
+  margin: 0 auto 25px;
+  max-width: 650px;
+}
+
+.admission-form {
+  max-width: 850px;
+  margin: auto;
+  padding: 28px;
+  background: white;
+  border: 1px solid #dce9db;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px #123b1710;
+}
+
+.form-heading {
+  color: #07552f;
+  font-size: 19px;
+  margin: 15px 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e6c56a;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 14px;
+  color: #244a31;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #cddbcf;
+  border-radius: 8px;
+  background: #fbfdf9;
+  color: #193d28;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid #7dbd91;
+  border-color: #07552f;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 25px 0;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.form-consent input {
+  margin-top: 12px;
+  accent-color: #07552f;
+  flex-shrink: 0;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #07552f;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #033b22;
+}
+
+.form-note {
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 2;
+  color: #8a5c19;
+}
+
+.form-message {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #07552f;
+}
+
+@media (max-width: 600px) {
+  .admission-form {
+    padding: 18px 14px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+}
+</style>
+
+<script>
+document.getElementById('admissionForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  document.getElementById('formMessage').textContent =
+    'یہ صرف ڈیمو ہے؛ درخواست محفوظ یا ارسال نہیں ہوئی۔ آن لائن جمع کرانے کے لیے فارم کو سروس سے جوڑنا ضروری ہے۔';
+});
+</script>
+<!-- TARBIYAT SECTION -->
+<section id="tarbiyat" class="tarbiyat-section">
+  <div class="tarbiyat-container">
+
+    <span class="tarbiyat-badge">اسلامی تربیت</span>
+
+    <h2>تعلیم کے ساتھ بہترین تربیت</h2>
+
+    <p class="tarbiyat-intro">
+      ہمارا مقصد صرف تعلیم دینا نہیں، بلکہ طلبہ میں
+      اچھے اخلاق، ادب، کردار اور اسلامی اقدار پیدا کرنا بھی ہے۔
+    </p>
+
+    <div class="tarbiyat-grid">
+
+      <div class="tarbiyat-card">
+        <div class="tarbiyat-icon">📖</div>
+        <h3>قرآن و سنت</h3>
+        <p>قرآن مجید کی تعلیم اور سنتِ نبوی ﷺ کے مطابق زندگی گزارنے کی رہنمائی۔</p>
+      </div>
+
+      <div class="tarbiyat-card">
+        <div class="tarbiyat-icon">🤝</div>
+        <h3>حسنِ اخلاق</h3>
+        <p>سچ بولنا، دوسروں کی عزت کرنا اور سب کے ساتھ اچھا برتاؤ کرنا۔</p>
+      </div>
+
+      <div class="tarbiyat-card">
+        <div class="tarbiyat-icon">🕌</div>
+        <h3>نماز کی پابندی</h3>
+        <p>نماز کی اہمیت سمجھنا اور عبادات کی پابندی کی عادت اپنانا۔</p>
+      </div>
+
+      <div class="tarbiyat-card">
+        <div class="tarbiyat-icon">🌱</div>
+        <h3>کردار سازی</h3>
+        <p>نظم و ضبط، ذمہ داری، صفائی اور دوسروں کی مدد کرنے کا جذبہ پیدا کرنا۔</p>
+      </div>
+
+    </div>
+
+    <div class="tarbiyat-message">
+      <h3>علم کے ساتھ عمل بھی ضروری ہے</h3>
+      <p>اچھی تعلیم وہ ہے جو انسان کے علم کے ساتھ اس کے کردار کو بھی بہتر بنائے۔</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.tarbiyat-section {
+  padding: 65px 18px;
+  background: linear-gradient(135deg, #071f19, #103c2e);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  direction: rtl;
+}
+
+.tarbiyat-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.tarbiyat-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #d7b56d;
+  color: #102a20;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.tarbiyat-section h2 {
+  font-size: 32px;
+  margin: 22px 0 15px;
+  color: #f0d69b;
+}
+
+.tarbiyat-intro {
+  max-width: 700px;
+  margin: 0 auto 35px;
+  line-height: 2;
+  color: #e0e9e4;
+}
+
+.tarbiyat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.tarbiyat-card {
+  padding: 25px 18px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(215,181,109,0.4);
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.tarbiyat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.12);
+}
+
+.tarbiyat-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.tarbiyat-card h3 {
+  color: #f0d69b;
+  margin-bottom: 12px;
+}
+
+.tarbiyat-card p,
+.tarbiyat-message p {
+  line-height: 1.9;
+  color: #e4ebe7;
+}
+
+.tarbiyat-message {
+  margin-top: 30px;
+  padding: 25px 18px;
+  border-right: 4px solid #d7b56d;
+  background: rgba(0,0,0,0.15);
+  border-radius: 12px;
+}
+
+.tarbiyat-message h3 {
+  color: #f0d69b;
+}
+
+@media (max-width: 500px) {
+  .tarbiyat-section h2 {
+    font-size: 25px;
+  }
+
+  .tarbiyat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<!-- OUR TEACHERS SECTION -->
+<section class="teachers-section" id="teachers">
+  <div class="teachers-container">
+
+    <span class="teachers-label">ہمارا تعلیمی عملہ</span>
+    <h2>اساتذہ کرام</h2>
+    <p class="teachers-description">
+      تجربہ کار اساتذہ کی رہنمائی میں دینی تعلیم،
+      قرآن مجید اور اسلامی اخلاق کی تعلیم۔
+    </p>
+
+    <div class="teachers-grid">
+
+      <div class="teacher-card">
+        <div class="teacher-avatar">👳</div>
+        <h3>شیخ الحدیث</h3>
+        <p class="teacher-subject">حدیث و اسلامی علوم</p>
+        <p>طلبہ کی دینی رہنمائی اور اسلامی تعلیمات کی تدریس۔</p>
+        <span class="teacher-tag">دینی تعلیم</span>
+      </div>
+
+      <div class="teacher-card">
+        <div class="teacher-avatar">📖</div>
+        <h3>استادِ قرآن</h3>
+        <p class="teacher-subject">قرآن مجید و تجوید</p>
+        <p>قرآن مجید کی درست تلاوت اور تجوید کی تعلیم۔</p>
+        <span class="teacher-tag">قرآن و تجوید</span>
+      </div>
+
+      <div class="teacher-card">
+        <div class="teacher-avatar">✍️</div>
+        <h3>استادِ عربی</h3>
+        <p class="teacher-subject">عربی زبان و قواعد</p>
+        <p>عربی زبان، قواعد اور بنیادی دینی علوم کی تدریس۔</p>
+        <span class="teacher-tag">عربی تعلیم</span>
+      </div>
+
+    </div>
+
+    <div class="teachers-note">
+      <strong>ہمارا عزم</strong>
+      <p>طلبہ کو علم، ادب اور اچھے کردار کے ساتھ آگے بڑھنے میں مدد دینا۔</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.teachers-section {
+  padding: 65px 18px;
+  background: #f5f7f3;
+  color: #173c2c;
+  text-align: center;
+  direction: rtl;
+  font-family: Arial, sans-serif;
+}
+
+.teachers-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.teachers-label {
+  display: inline-block;
+  padding: 8px 18px;
+  background: #dcebdd;
+  color: #20543b;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.teachers-section h2 {
+  font-size: 34px;
+  margin: 18px 0 12px;
+  color: #16452f;
+}
+
+.teachers-description {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 2;
+  color: #64736a;
+}
+
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.teacher-card {
+  background: white;
+  padding: 28px 18px;
+  border-radius: 20px;
+  border: 1px solid #e0e8df;
+  box-shadow: 0 8px 25px rgba(20, 60, 40, 0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.teacher-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(20, 60, 40, 0.13);
+}
+
+.teacher-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7f0e6;
+  border-radius: 50%;
+  font-size: 38px;
+}
+
+.teacher-card h3 {
+  margin: 10px 0;
+  color: #174a32;
+}
+
+.teacher-card p {
+  line-height: 1.9;
+  color: #64736a;
+}
+
+.teacher-card .teacher-subject {
+  color: #a17b36;
+  font-weight: bold;
+}
+
+.teacher-tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 15px;
+  background: #e7f0e6;
+  color: #20543b;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.teachers-note {
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 15px;
+  background: #173c2c;
+  color: white;
+}
+
+.teachers-note strong {
+  color: #e9d39a;
+  font-size: 21px;
+}
+
+.teachers-note p {
+  line-height: 1.9;
+}
+
+@media (max-width: 700px) {
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teachers-section h2 {
+    font-size: 28px;
+  }
+}
+</style>
+<!-- MADRASA GALLERY -->
+<section id="gallery" class="madrasa-gallery">
+
+  <div class="gallery-container">
+
+    <span class="gallery-tag">ہمارا مدرسہ</span>
+
+    <h2 class="gallery-title">مدرسے کی خوبصورت جھلکیاں</h2>
+
+    <p class="gallery-description">
+      علم، تربیت، عبادت اور خوبصورت یادوں کا ایک حسین سفر
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item gallery-large">
+        <img
+          src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1000&q=85"
+          alt="اسلامی تعلیم"
+          loading="lazy">
+        <div class="gallery-overlay">
+          <h3>دینی تعلیم</h3>
+          <p>علم کی روشنی، روشن مستقبل</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=700&q=85"
+          alt="اسلامی فن تعمیر"
+          loading="lazy">
+        <div class="gallery-overlay">
+          <h3>اسلامی ورثہ</h3>
+          <p>ایمان اور خوبصورتی</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=700&q=85"
+          alt="کتابیں اور مطالعہ"
+          loading="lazy">
+        <div class="gallery-overlay">
+          <h3>کتاب و مطالعہ</h3>
+          <p>علم سے محبت</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=700&q=85"
+          alt="عبادت گاہ"
+          loading="lazy">
+        <div class="gallery-overlay">
+          <h3>عبادت</h3>
+          <p>روحانی سکون</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=700&q=85"
+          alt="تعلیم اور مطالعہ"
+          loading="lazy">
+        <div class="gallery-overlay">
+          <h3>تعلیم و تربیت</h3>
+          <p>بہتر کل کی تیاری</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery-footer">
+      <span>علم</span>
+      <span class="gallery-dot">✦</span>
+      <span>اخلاق</span>
+      <span class="gallery-dot">✦</span>
+      <span>کردار</span>
+    </div>
+
+  </div>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+.madrasa-gallery {
+  padding: 75px 20px;
+  background: #071f19;
+  color: #f8f4e9;
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+.gallery-container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.gallery-tag {
+  display: inline-block;
+  color: #e4c781;
+  border: 1px solid #9d8248;
+  border-radius: 30px;
+  padding: 7px 20px;
+  font-size: 14px;
+}
+
+.gallery-title {
+  color: #f0d69b;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: clamp(23px, 4vw, 36px);
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  margin: 20px 0 5px;
+}
+
+.gallery-description {
+  text-align: center;
+  color: #c5d2ca;
+  line-height: 2.3;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 230px;
+  gap: 17px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(228,199,129,0.35);
+  background: #15382c;
+}
+
+.gallery-large {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 16px;
+  background: linear-gradient(
+    to top,
+    rgba(2,17,12,0.94),
+    rgba(2,17,12,0.08) 75%
+  );
+}
+
+.gallery-overlay h3 {
+  color: #f0d69b;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 18px;
+  line-height: 2;
+  margin: 0;
+}
+
+.gallery-overlay p {
+  color: #fff;
+  font-size: 13px;
+  line-height: 2;
+  margin: 0;
+}
+
+.gallery-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  color: #f0d69b;
+  font-size: 15px;
+}
+
+.gallery-dot {
+  color: #b39a60;
+}
+
+@media (max-width: 700px) {
+  .madrasa-gallery {
+    padding: 50px 14px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 185px;
+    gap: 10px;
+  }
+
+  .gallery-large {
+    grid-row: span 2;
+  }
+
+  .gallery-overlay {
+    padding: 12px 10px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 15px;
+  }
+
+  .gallery-overlay p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .gallery-large {
+    grid-row: span 1;
+  }
+}
+</style>
+<!-- ADMISSION ANNOUNCEMENT SECTION -->
+<section class="admission-section" id="admission-info">
+  <div class="admission-box">
+
+    <div class="admission-content">
+      <span class="admission-label">داخلے کی معلومات</span>
+
+      <h2>اپنے بچوں کے روشن مستقبل کا آغاز کریں</h2>
+
+      <p class="admission-description">
+        دینی تعلیم، قرآن مجید، اسلامی آداب اور بہترین کردار سازی
+        کے لیے ہمارے مدرسے سے رابطہ کریں۔
+      </p>
+
+      <div class="admission-features">
+        <div>✓ قرآن مجید اور تجوید</div>
+        <div>✓ اسلامی تعلیم و تربیت</div>
+        <div>✓ اخلاق اور کردار سازی</div>
+      </div>
+
+      <a href="#contact" class="admission-button">
+        رابطہ کریں <span>←</span>
+      </a>
+    </div>
+
+    <div class="admission-decoration">
+      <div class="admission-circle">
+        <div class="admission-book">📖</div>
+        <span>علم کی روشنی</span>
+        <small>تعلیم • تربیت • اخلاق</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.admission-section {
+  padding: 65px 18px;
+  background: #f5f4ed;
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+.admission-box {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  align-items: center;
+  gap: 30px;
+  padding: 45px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #08271d, #15533a);
+  border: 1px solid #c4a15a;
+  box-shadow: 0 15px 40px rgba(8, 39, 29, 0.13);
+}
+
+.admission-label {
+  display: inline-block;
+  color: #f0d69b;
+  border: 1px solid #b99a59;
+  border-radius: 30px;
+  padding: 7px 18px;
+  font-size: 13px;
+}
+
+.admission-content h2 {
+  color: #f0d69b;
+  font-size: clamp(23px, 3vw, 34px);
+  line-height: 2;
+  margin: 20px 0 12px;
+}
+
+.admission-description {
+  color: #e1e9e3;
+  font-size: 15px;
+  line-height: 2.3;
+}
+
+.admission-features {
+  display: grid;
+  gap: 12px;
+  margin: 25px 0;
+  color: #f6f5ed;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.admission-features div::first-letter {
+  color: #f0d69b;
+}
+
+.admission-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 25px;
+  background: #e4c781;
+  color: #102d21;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.admission-button:hover {
+  background: #fff0c4;
+  transform: translateY(-3px);
+}
+
+.admission-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+}
+
+.admission-circle {
+  width: 230px;
+  height: 230px;
+  border: 2px solid #c6a75f;
+  border-radius: 50%;
+  outline: 1px solid rgba(198,167,95,0.5);
+  outline-offset: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: #f0d69b;
+  text-align: center;
+}
+
+.admission-book {
+  font-size: 55px;
+}
+
+.admission-circle span {
+  font-size: 19px;
+}
+
+.admission-circle small {
+  font-size: 11px;
+  color: #e1e9e3;
+}
+
+@media (max-width: 700px) {
+  .admission-box {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 15px;
+  }
+
+  .admission-decoration {
+    min-height: 230px;
+  }
+
+  .admission-circle {
+    width: 190px;
+    height: 190px;
+  }
+}
+</style>
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+
+    <div class="contact-heading">
+      <span class="contact-badge">ہم سے رابطہ کریں</span>
+      <h2>آپ کی رہنمائی کے لیے ہم حاضر ہیں</h2>
+      <p>داخلے، تعلیم اور مدرسے سے متعلق معلومات کے لیے ہمیں پیغام بھیجیں۔</p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <div class="contact-symbol">☪</div>
+        <h3>مدرسہ دارالاسلام</h3>
+        <p class="contact-info-text">
+          دینی تعلیم، قرآن مجید اور اسلامی تربیت کے لیے
+          ہم سے رابطہ کریں۔
+        </p>
+
+        <div class="contact-detail">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>پتہ</strong>
+            <p>یہاں مدرسے کا مکمل پتہ لکھیں</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>موبائل نمبر</strong>
+            <p>یہاں مدرسے کا فون نمبر لکھیں</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-icon">🕌</span>
+          <div>
+            <strong>دفتری اوقات</strong>
+            <p>یہاں دفتری اوقات درج کریں</p>
+          </div>
+        </div>
+
+        <div class="contact-ornament">✦ علم ✦ عمل ✦ اخلاق ✦</div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <form class="contact-form" id="madrasaContactForm">
+
+        <h3>پیغام بھیجیں</h3>
+        <p class="form-subtitle">براہ کرم نیچے اپنی معلومات درج کریں۔</p>
+
+        <label for="contactName">مکمل نام</label>
+        <input
+          type="text"
+          id="contactName"
+          name="name"
+          placeholder="اپنا نام لکھیں"
+          required>
+
+        <label for="contactPhone">موبائل نمبر</label>
+        <input
+          type="tel"
+          id="contactPhone"
+          name="phone"
+          placeholder="03XXXXXXXXX"
+          pattern="03[0-9]{9}"
+          title="پاکستانی موبائل نمبر 03 سے شروع ہونے والے 11 ہندسوں میں درج کریں"
+          required>
+
+        <label for="contactPurpose">رابطے کا مقصد</label>
+        <select id="contactPurpose" name="purpose" required>
+          <option value="">مقصد منتخب کریں</option>
+          <option value="admission">داخلے کی معلومات</option>
+          <option value="education">تعلیمی معلومات</option>
+          <option value="quran">قرآن و تجوید</option>
+          <option value="other">دیگر معلومات</option>
+        </select>
+
+        <label for="contactMessage">آپ کا پیغام</label>
+        <textarea
+          id="contactMessage"
+          name="message"
+          rows="4"
+          placeholder="اپنا پیغام یہاں لکھیں..."
+          required></textarea>
+
+        <button type="submit" class="contact-submit">
+          پیغام تیار کریں <span>←</span>
+        </button>
+
+        <p class="contact-notice" id="contactNotice" role="status">
+          آپ کی معلومات اس وقت صرف اسی فارم میں درج ہوں گی۔
+        </p>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-section {
+  padding: 75px 18px;
+  background: #f5f4ed;
+  color: #173c2c;
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-badge {
+  display: inline-block;
+  background: #e4ecdF;
+  color: #20543b;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+.contact-heading h2 {
+  color: #17452f;
+  font-size: clamp(22px, 4vw, 34px);
+  line-height: 2;
+  margin: 18px 0 8px;
+}
+
+.contact-heading > p {
+  color: #68776c;
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+
+.contact-info {
+  padding: 35px 28px;
+  border-radius: 22px;
+  color: white;
+  background: linear-gradient(145deg, #071f19, #18543a);
+  border: 1px solid #c6a75f;
+}
+
+.contact-symbol {
+  color: #f0d69b;
+  font-size: 42px;
+  text-align: center;
+}
+
+.contact-info h3 {
+  text-align: center;
+  color: #f0d69b;
+  font-size: 23px;
+  line-height: 2;
+}
+
+.contact-info-text {
+  text-align: center;
+  color: #dce7df;
+  line-height: 2.2;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.13);
+}
+
+.contact-icon {
+  font-size: 22px;
+}
+
+.contact-detail strong {
+  color: #f0d69b;
+  font-size: 14px;
+}
+
+.contact-detail p {
+  color: #e2e9e3;
+  font-size: 12px;
+  line-height: 2;
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-ornament {
+  color: #e4c781;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+.contact-form {
+  background: white;
+  padding: 32px;
+  border-radius: 22px;
+  border: 1px solid #e1e7dc;
+  box-shadow: 0 10px 35px rgba(20,60,40,0.07);
+}
+
+.contact-form h3 {
+  font-size: 23px;
+  color: #17452f;
+  line-height: 2;
+  margin: 0;
+}
+
+.form-subtitle {
+  color: #7b857d;
+  font-size: 12px;
+  line-height: 2;
+  margin: 0 0 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 17px 0 8px;
+  color: #254b37;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #dce4da;
+  border-radius: 10px;
+  background: #fbfcf9;
+  color: #193a29;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #b99a59;
+  box-shadow: 0 0 0 3px rgba(185,154,89,0.12);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  font-family: inherit;
+  line-height: 2;
+}
+
+.contact-submit {
+  width: 100%;
+  margin-top: 23px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #16452f;
+  color: #f0d69b;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-submit:hover {
+  background: #236643;
+}
+
+.contact-submit span {
+  margin-right: 8px;
+}
+
+.contact-notice {
+  color: #69796d;
+  font-size: 11px;
+  line-height: 2;
+  margin: 15px 0 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .contact-section {
+    padding: 50px 14px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 25px 18px;
+  }
+}
+</style>
+
+<script>
+document.getElementById("madrasaContactForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const message =
+      "مدرسے سے رابطے کی درخواست\n\n" +
+      "نام: " + data.get("name") + "\n" +
+      "موبائل: " + data.get("phone") + "\n" +
+      "مقصد: " + data.get("purpose") + "\n" +
+      "پیغام: " + data.get("message");
+
+    const notice = document.getElementById("contactNotice");
+    notice.textContent = message;
+
+    const copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.className = "contact-submit";
+    copyButton.textContent = "درخواست کا متن کاپی کریں";
+
+    copyButton.onclick = async function() {
+      try {
+        await navigator.clipboard.writeText(message);
+        notice.textContent = "درخواست کا متن کاپی ہوگیا۔ اب آپ اسے مدرسے کو بھیج سکتے ہیں۔";
+      } catch (error) {
+        notice.textContent = "متن کاپی نہیں ہوسکا۔ براہ کرم درخواست کا متن منتخب کرکے کاپی کریں۔";
+      }
+    };
+
+    const oldButton = form.querySelector(".copy-request-button");
+    if (oldButton) oldButton.remove();
+
+    copyButton.classList.add("copy-request-button");
+    form.appendChild(copyButton);
+  });
+</script>
+<!-- MADRASA FOOTER -->
+<footer class="madrasa-footer" id="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-main">
+
+      <!-- LOGO AND INTRO -->
+      <div class="footer-brand">
+        <div class="footer-logo">د</div>
+        <h2>مدرسہ دارالاسلام</h2>
+        <span class="footer-subtitle">علم • عمل • اخلاص</span>
+        <p>
+          قرآن و سنت کی روشنی میں دینی تعلیم،
+          اسلامی تربیت اور بہترین کردار سازی کا سفر۔
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="footer-column">
+        <h3>اہم لنکس</h3>
+        <a href="#top">صفحۂ اول</a>
+        <a href="#tarbiyat">اسلامی تربیت</a>
+        <a href="#teachers">اساتذہ کرام</a>
+        <a href="#gallery">تصویری گیلری</a>
+        <a href="#admission-info">داخلے کی معلومات</a>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="footer-column">
+        <h3>رابطہ معلومات</h3>
+        <p>پتہ: یہاں مدرسے کا مکمل پتہ لکھیں</p>
+        <p>فون: یہاں مدرسے کا نمبر لکھیں</p>
+        <a href="#contact">ہم سے رابطہ کریں</a>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>
+        © <span id="footerYear"></span>
+        مدرسہ دارالاسلام۔ جملہ حقوق محفوظ ہیں۔
+      </p>
+
+      <a href="#top" class="footer-top-button">
+        اوپر جائیں ↑
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+.madrasa-footer {
+  background: linear-gradient(145deg, #061a14, #103b2a);
+  color: #e7eee8;
+  padding: 55px 20px 20px;
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', serif;
+  border-top: 3px solid #c6a75f;
+}
+
+.footer-container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 35px;
+}
+
+.footer-logo {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #d9bb76;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0d69b;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.footer-brand h2 {
+  color: #f0d69b;
+  font-size: 23px;
+  line-height: 2;
+  margin: 0;
+}
+
+.footer-subtitle {
+  display: inline-block;
+  color: #d5b76d;
+  font-size: 12px;
+  margin: 5px 0 12px;
+}
+
+.footer-brand p,
+.footer-column p {
+  color: #c5d4c9;
+  font-size: 12px;
+  line-height: 2.4;
+  overflow-wrap: anywhere;
+}
+
+.footer-column h3 {
+  color: #f0d69b;
+  font-size: 18px;
+  line-height: 2;
+  margin: 0 0 18px;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  background: #c6a75f;
+  margin-top: 8px;
+}
+
+.footer-column a {
+  display: block;
+  width: fit-content;
+  color: #d5e0d7;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 2.5;
+  transition: 0.25s;
+}
+
+.footer-column a:hover {
+  color: #f0d69b;
+  transform: translateX(-4px);
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(215, 181, 109, 0.3);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  color: #bdcec2;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.footer-top-button {
+  color: #102d21;
+  background: #e4c781;
+  padding: 9px 17px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.footer-top-button:hover {
+  background: #fff0c4;
+}
+
+@media (max-width: 750px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+
+<script>
+document.getElementById("footerYear").textContent =
+  new Date().getFullYear();
+</script>
